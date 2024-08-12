@@ -32,7 +32,7 @@ Planilha_xml['N° NF'] = pd.to_numeric(Planilha_xml['N° NF'], errors='coerce')
 
 # Manter apenas as linhas onde 'N° NF' não é NaN
 Planilha_xml = Planilha_xml.dropna(subset=['N° NF'])
-print(Planilha_xml)
+#print(Planilha_xml)
 
 def click_selenium(selector, value):
     try:
@@ -43,7 +43,7 @@ def click_selenium(selector, value):
         print(f"Erro ao clicar: {e}")
 
 # Define o caminho para o diretório de downloads
-download_dir = r"C:\Users\Andrew\Documents\XML"
+download_dir = r"C:\Users\Usuario\Documents\XML"
 
 # Configurações de opções para o Chrome
 options = Options()
@@ -63,8 +63,9 @@ prefs = {
 }
 options.add_experimental_option("prefs", prefs)
 
-# Inicializa o driver do Chrome
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+# # Inicializa o driver do Chrome  
+#driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+driver = webdriver.Chrome(options=options)
 driver.get("https://www.nestle-parceiro.com.br/Portal/PortalNestle.aspx?contextId=fb8b300d-0f7d-4df7-8a63-672c07287d44#")
 driver.maximize_window()
 
